@@ -7,8 +7,8 @@ global using Application.Services;
 global using Application.Common.Dtos.PlatfromDtos;
 global using AutoMapper;
 global using MediatR;
-
-
+global using Application.Common.InterFaces;
+global using System.Reflection;
 
 
 

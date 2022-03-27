@@ -1,15 +1,17 @@
+
+
+using Persistence.ApplicationDbContext.PrepDb;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 #region AddOtherLayerDependencies
-// builder.Services.AddApplication();
-
+builder.Services.AddPersistence();
+builder.Services.AddApplication();
+builder.Services.AddInfrasStructure();
 #endregion
 #region AddInMemDb
 builder.Services.AddDbContext<AppDbContext>(a =>
 a.UseInMemoryDatabase("InMem"));
-#endregion
-#region AddAutoMapper
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 #endregion
 
 builder.Services.AddControllers();
@@ -18,7 +20,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
+//Seed Data
+PrepDb.PrepPopulation(builder.Services);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

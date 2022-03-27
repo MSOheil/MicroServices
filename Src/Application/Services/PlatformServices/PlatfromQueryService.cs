@@ -1,3 +1,5 @@
+
+
 namespace Application.Services;
 public class PlatfromQueryService : IPlatfromQueryService
 {

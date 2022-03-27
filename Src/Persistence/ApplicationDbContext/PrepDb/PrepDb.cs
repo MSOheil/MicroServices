@@ -1,9 +1,9 @@
 namespace Persistence.ApplicationDbContext.PrepDb;
 public static class PrepDb
 {
-    public static void PrepPopulation(IApplicationBuilder app)
+    public static void PrepPopulation(IServiceCollection app)
     {
-        using (var serviceScope = app.ApplicationServices.CreateScope())
+        using (var serviceScope = app.BuildServiceProvider().CreateScope())
         {
             SeedData(serviceScope.ServiceProvider.GetService<AppDbContext>());
         }

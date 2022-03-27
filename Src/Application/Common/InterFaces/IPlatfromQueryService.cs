@@ -1,4 +1,4 @@
-namespace Application.InterFaces;
+namespace Application.Common.InterFaces;
 public interface IPlatfromQueryService
 {
     /// <summary>

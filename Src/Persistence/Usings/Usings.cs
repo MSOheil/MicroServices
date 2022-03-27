@@ -4,7 +4,7 @@ global using Microsoft.AspNetCore.Builder;
 global using Microsoft.Extensions.DependencyInjection;
 global using Application.Common.InterFaces.DbContext;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
+global using Persistence.ApplicationDbContext;
 
 
 
