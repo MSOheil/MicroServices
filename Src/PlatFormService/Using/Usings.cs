@@ -1,27 +1,12 @@
 global using Microsoft.EntityFrameworkCore;
+global using PlatFormService.InterFaces;
+global using PlatFormService.InterFaces.DbContextInterFace.Services;
+global using PlatFormService.InterFaces.Services;
+global using PlatFormService.InterFaces.Services.ApplicationDbContext;
+global using PlatFormService.InterFaces.Services.ApplicationDbContext.PrepDb;
+global using System.Reflection;
+global using PlatFormService.Entity;
 global using AutoMapper;
+global using PlatFormService.Dtos.PlatfromDtos;
 global using Microsoft.AspNetCore.Mvc;
-global using Application.InterFaces;
-global using Application.Common.Dtos.PlatfromDtos;
-global using MediatR;
-global using Persistence.ApplicationDbContext;
-global using Application;
-global using Infrastructure;
-global using Application.PlatformCQ.Query.GetAllPlatformQuery;
-global using Application.Common.InterFaces;
-global using Persistence;
-global using Application.PlatformCQ.Query.GetPlatformByIdQuery;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;

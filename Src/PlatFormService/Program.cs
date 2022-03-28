@@ -1,19 +1,17 @@
 
 
-using Persistence.ApplicationDbContext.PrepDb;
-
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 #region AddOtherLayerDependencies
-builder.Services.AddPersistence();
-builder.Services.AddApplication();
-builder.Services.AddInfrasStructure();
+builder.Services.AddScoped<IAppDbContext, AppDbContext>();
+builder.Services.AddTransient<IPlatfromQueryService, PlatfromQueryService>();
+builder.Services.AddTransient<IPlatfromCommandService, PlatfromCommandService>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 #endregion
 #region AddInMemDb
 builder.Services.AddDbContext<AppDbContext>(a =>
 a.UseInMemoryDatabase("InMem"));
 #endregion
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
