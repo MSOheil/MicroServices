@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{E49A0753-8C0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatFormService", "Src\PlatFormService\PlatFormService.csproj", "{67CAA410-79AB-40DF-A684-B4A857C047CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandService", "Src\CommandService\CommandService.csproj", "{BB4BF40B-19DB-4CEF-AEFE-36E030C19245}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{67CAA410-79AB-40DF-A684-B4A857C047CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67CAA410-79AB-40DF-A684-B4A857C047CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67CAA410-79AB-40DF-A684-B4A857C047CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB4BF40B-19DB-4CEF-AEFE-36E030C19245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB4BF40B-19DB-4CEF-AEFE-36E030C19245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB4BF40B-19DB-4CEF-AEFE-36E030C19245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB4BF40B-19DB-4CEF-AEFE-36E030C19245}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{67CAA410-79AB-40DF-A684-B4A857C047CD} = {E49A0753-8C01-4B7F-819C-C9D0A92DC104}
+		{BB4BF40B-19DB-4CEF-AEFE-36E030C19245} = {E49A0753-8C01-4B7F-819C-C9D0A92DC104}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F5B187C-6CE1-48A2-AEF3-17E36E5D67C7}
