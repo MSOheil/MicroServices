@@ -7,14 +7,15 @@ public class PlatfromServicesController : ControllerBase
 {
     private readonly IPlatfromQueryService _platformQueryService;
     private readonly IPlatfromCommandService _platformCommandService;
+    private readonly ICommandDataClientService _commandDataClientService;
     private readonly IMapper _mapper;
     public PlatfromServicesController(IPlatfromQueryService platformQueryService, IMapper mapper
-        , IPlatfromCommandService platformCommandService)
+        , IPlatfromCommandService platformCommandService, ICommandDataClientService commandDataClientService)
     {
         this._platformQueryService = platformQueryService;
         this._mapper = mapper;
         this._platformCommandService = platformCommandService;
-
+        this._commandDataClientService = commandDataClientService;
     }
     [Route("/GetAllPlatforms")]
     [HttpGet]
@@ -32,15 +33,14 @@ public class PlatfromServicesController : ControllerBase
     }
     [Route("/CreatPlatform")]
     [HttpPost]
-    public IActionResult CreatePlatform(PlatformCreateDto platform)
+    public async Task<IActionResult> CreatePlatform(PlatformCreateDto platform)
     {
-        _platformCommandService.CreatePlatfrom(_mapper.Map<Platform>(platform));
+        var platFormReadDto = _mapper.Map<Platform>(platform);
+        _platformCommandService.CreatePlatfrom(platFormReadDto);
+      await  _commandDataClientService.SendPlatformToCommand(platform);
         return StatusCode(201);
     }
     [Route("/Ping")]
     [HttpGet]
-    public ActionResult Ping()
-    {
-        return Ok("Pong");
-    }
+    public ActionResult Ping() => Ok("Pong");
 }

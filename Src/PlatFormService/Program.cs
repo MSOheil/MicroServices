@@ -1,8 +1,10 @@
 
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
-#region AddOtherLayerDependencies
+#region DIServices
 builder.Services.AddScoped<IAppDbContext, AppDbContext>();
 builder.Services.AddTransient<IPlatfromQueryService, PlatfromQueryService>();
 builder.Services.AddTransient<IPlatfromCommandService, PlatfromCommandService>();
@@ -11,6 +13,10 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 #region AddInMemDb
 builder.Services.AddDbContext<AppDbContext>(a =>
 a.UseInMemoryDatabase("InMem"));
+#endregion
+#region AddHttpClientService
+builder.Services.AddHttpClient<ICommandDataClientService, CommandDataClientService>();
+
 #endregion
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

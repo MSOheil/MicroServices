@@ -10,3 +10,9 @@ global using AutoMapper;
 global using PlatFormService.Dtos.PlatfromDtos;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using PlatFormService.InterFaces.SyncData;
+global using System.Text.Json;
+global using System.Text;
+global using PlatFormService.InterFaces.Services.SyncData;
+
+
