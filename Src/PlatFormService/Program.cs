@@ -11,6 +11,10 @@ builder.Services.AddTransient<IPlatfromCommandService, PlatfromCommandService>()
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 #endregion
 #region AddInMemDb
+if(builder.WebHost.Production)
+{
+
+}
 builder.Services.AddDbContext<AppDbContext>(a =>
 a.UseInMemoryDatabase("InMem"));
 #endregion
